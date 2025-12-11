@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -58,6 +59,12 @@ const Header = () => {
             <a href="#about" className="hover:text-neon-blue transition-colors">About</a>
             <a href="#pricing" className="hover:text-neon-blue transition-colors">Pricing</a>
             <a href="#contact" className="hover:text-neon-blue transition-colors">Contact</a>
+            <Link 
+              to="/admin/login" 
+              className="px-6 py-2 text-neon-blue border border-neon-blue rounded-lg font-semibold hover:bg-neon-blue hover:text-space-black transition-all duration-300 hover:scale-105"
+            >
+              Login
+            </Link>
             <button className="px-6 py-2 bg-neon-blue text-space-black rounded-lg font-semibold hover:shadow-neon-blue transition-all duration-300 hover:scale-105">
               Get Started
             </button>
@@ -93,6 +100,14 @@ const Header = () => {
             <a onClick={closeMenu} href="#about" className="text-2xl text-white hover:text-neon-blue">About</a>
             <a onClick={closeMenu} href="#pricing" className="text-2xl text-white hover:text-neon-blue">Pricing</a>
             <a onClick={closeMenu} href="#contact" className="text-2xl text-white hover:text-neon-blue">Contact</a>
+
+            <Link 
+              to="/admin/login"
+              onClick={closeMenu}
+              className="px-8 py-3 text-neon-blue border border-neon-blue text-lg rounded-lg font-semibold hover:bg-neon-blue hover:text-space-black transition-all duration-300 hover:scale-105"
+            >
+              Login
+            </Link>
 
             <button 
               onClick={closeMenu}
