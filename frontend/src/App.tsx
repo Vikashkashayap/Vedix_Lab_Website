@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import Login from './components/admin/Login';
 import Dashboard from './components/admin/Dashboard';
 import ProtectedRoute from './components/admin/ProtectedRoute';
+import Chatbot from './components/Chatbot';
 
 function HomePage() {
   return (
@@ -26,6 +27,7 @@ function HomePage() {
       <Contact />
       <Footer />
       <BottomNavigation />
+      <Chatbot />
     </div>
   );
 }
