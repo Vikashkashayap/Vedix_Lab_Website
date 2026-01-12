@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { api } from '../utils/api';
+import { useAudioFeedback } from '../hooks/useAudioFeedback';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -18,6 +19,8 @@ const Chatbot = () => {
   ]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
+  const { clickSound, successSound, errorSound } = useAudioFeedback();
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -35,8 +38,10 @@ const Chatbot = () => {
 
   const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!inputMessage.trim() || isLoading) return;
+
+    clickSound();
 
     const messageContent = inputMessage.trim();
     const userMessage: Message = {
@@ -49,6 +54,7 @@ const Chatbot = () => {
     setMessages(prev => [...prev, userMessage]);
     setInputMessage('');
     setIsLoading(true);
+    setIsTyping(true);
 
     try {
       // Get chat history (including the new user message)
@@ -67,15 +73,16 @@ const Chatbot = () => {
           timestamp: response.data.timestamp
         };
         setMessages(prev => [...prev, assistantMessage]);
+        successSound();
       } else {
         throw new Error('Invalid response from server');
       }
     } catch (error: any) {
       console.error('Chatbot error:', error);
-      
+
       // Provide user-friendly error messages based on error type
       let errorContent = 'Sorry, I encountered an error. Please try again later or contact our support team.';
-      
+
       if (error.message?.includes('timeout')) {
         errorContent = 'The AI is taking longer than usual to respond. This can happen during high demand. Please try:\n\n' +
           '1. Asking a shorter question\n' +
@@ -87,15 +94,17 @@ const Chatbot = () => {
       } else if (error.message?.includes('Invalid response')) {
         errorContent = 'Received an unexpected response from the AI service. Please try again.';
       }
-      
+
       const errorMessage: Message = {
         role: 'assistant',
         content: errorContent,
         timestamp: new Date().toISOString()
       };
       setMessages(prev => [...prev, errorMessage]);
+      errorSound();
     } finally {
       setIsLoading(false);
+      setIsTyping(false);
     }
   };
 
@@ -111,8 +120,8 @@ const Chatbot = () => {
         className={`
           fixed bottom-6 right-6 z-50
           w-14 h-14 md:w-16 md:h-16
-          bg-neon-blue text-space-black
-          rounded-full shadow-neon-blue
+          bg-vedix-red text-vedix-white
+          rounded-full shadow-vedix-red
           flex items-center justify-center
           hover:scale-110 active:scale-95
           transition-all duration-300
@@ -137,13 +146,13 @@ const Chatbot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[calc(100vw-3rem)] max-w-md h-[600px] md:h-[650px] flex flex-col glass rounded-2xl border border-neon-blue/30 shadow-neon-blue overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
+        <div className="fixed bottom-6 right-6 z-50 w-[calc(100vw-3rem)] max-w-md h-[600px] md:h-[650px] flex flex-col glass rounded-2xl border border-vedix-red/30 shadow-vedix-red overflow-hidden animate-in slide-in-from-bottom-5 duration-300 touch-pan-y">
           {/* Chat Header */}
-          <div className="bg-gradient-to-r from-neon-blue/20 to-electric-purple/20 px-4 py-3 border-b border-neon-blue/30 flex items-center justify-between">
+          <div className="bg-gradient-to-r from-vedix-red/20 to-vedix-red-light/20 px-4 py-3 border-b border-vedix-red/30 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-neon-blue/20 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full bg-vedix-red/20 flex items-center justify-center">
                 <svg
-                  className="w-5 h-5 text-neon-blue"
+                  className="w-5 h-5 text-vedix-red"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -158,7 +167,7 @@ const Chatbot = () => {
               </div>
               <div>
                 <h3 className="text-white font-semibold text-sm md:text-base">AI Assistant</h3>
-                <p className="text-neon-blue text-xs">Online • Ready to help</p>
+                <p className="text-vedix-red text-xs">Online • Ready to help</p>
               </div>
             </div>
             <button
@@ -173,35 +182,45 @@ const Chatbot = () => {
           </div>
 
           {/* Messages Container */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-cyber-navy/30">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-vedix-card/30">
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`flex animate-fadeIn ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div
                   className={`
-                    max-w-[80%] md:max-w-[75%] rounded-2xl px-4 py-2.5
+                    max-w-[80%] md:max-w-[75%] rounded-2xl px-4 py-2.5 transition-all duration-300 hover:scale-105
                     ${
                       message.role === 'user'
-                        ? 'bg-neon-blue text-space-black'
-                        : 'bg-cyber-navy/80 text-white border border-neon-blue/20'
+                        ? 'bg-vedix-red text-vedix-white shadow-vedix-red/50'
+                        : 'bg-vedix-card/80 text-white border border-vedix-red/20 hover:border-vedix-red/40'
                     }
                   `}
                 >
-                  <p className="text-sm md:text-base whitespace-pre-wrap break-words">
+                  <p className="text-sm md:text-base whitespace-pre-wrap break-words leading-relaxed">
                     {message.content}
                   </p>
+                  <div className="text-xs opacity-60 mt-1">
+                    {new Date(message.timestamp || Date.now()).toLocaleTimeString([], {
+                      hour: '2-digit',
+                      minute: '2-digit'
+                    })}
+                  </div>
                 </div>
               </div>
             ))}
-            {isLoading && (
-              <div className="flex justify-start">
-                <div className="bg-cyber-navy/80 text-white border border-neon-blue/20 rounded-2xl px-4 py-2.5">
-                  <div className="flex gap-1">
-                    <div className="w-2 h-2 bg-neon-blue rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                    <div className="w-2 h-2 bg-neon-blue rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                    <div className="w-2 h-2 bg-neon-blue rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+            {isTyping && (
+              <div className="flex justify-start animate-fadeIn">
+                <div className="bg-vedix-card/80 text-white border border-vedix-red/20 rounded-2xl px-4 py-3">
+                  <div className="flex items-center gap-3">
+                    <div className="flex gap-1">
+                      <div className="w-2 h-2 bg-vedix-red rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                      <div className="w-2 h-2 bg-vedix-red rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                      <div className="w-2 h-2 bg-vedix-red rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                    </div>
+                    <span className="text-xs text-gray-400">AI is typing...</span>
                   </div>
                 </div>
               </div>
@@ -210,7 +229,7 @@ const Chatbot = () => {
           </div>
 
           {/* Input Form */}
-          <form onSubmit={handleSendMessage} className="p-4 border-t border-neon-blue/30 bg-cyber-navy/50">
+          <form onSubmit={handleSendMessage} className="p-4 border-t border-vedix-red/30 bg-vedix-card/50">
             <div className="flex gap-2">
               <input
                 ref={inputRef}
@@ -219,13 +238,13 @@ const Chatbot = () => {
                 onChange={(e) => setInputMessage(e.target.value)}
                 placeholder="Type your message..."
                 disabled={isLoading}
-                className="flex-1 px-4 py-2.5 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-neon-blue focus:ring-2 focus:ring-neon-blue/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm md:text-base"
+                className="flex-1 px-4 py-2.5 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-vedix-red focus:ring-2 focus:ring-vedix-red/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm md:text-base"
                 maxLength={2000}
               />
               <button
                 type="submit"
                 disabled={!inputMessage.trim() || isLoading}
-                className="px-4 py-2.5 bg-neon-blue text-space-black rounded-lg font-semibold hover:shadow-neon-blue transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none hover:scale-105 active:scale-95"
+                className="px-4 py-2.5 bg-vedix-red text-vedix-white rounded-lg font-semibold hover:shadow-vedix-red transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none hover:scale-105 active:scale-95"
                 aria-label="Send message"
               >
                 <svg

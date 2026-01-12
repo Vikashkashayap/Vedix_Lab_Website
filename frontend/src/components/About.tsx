@@ -1,56 +1,99 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+
 const About = () => {
-  // Team/tech image from Unsplash
-  const teamImage = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+  // AI innovation studio image from Unsplash
+  const aiStudioImage = "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+
+  // Scroll animations
+  const imageAnimation = useScrollAnimation<HTMLDivElement>({ delay: 100 });
+  const contentAnimation = useScrollAnimation<HTMLDivElement>({ delay: 300 });
+  const highlightsAnimation = useScrollAnimation<HTMLDivElement>({ delay: 500 });
 
   const highlights = [
-    { text: '50+ Business Workflows Automated', icon: '✔' },
-    { text: '100% Modern Tech Stack', icon: '✔' },
-    { text: 'AI-Integrated Solutions', icon: '✔' },
-    { text: 'End-to-End Support & Maintenance', icon: '✔' },
+    { text: 'AI Innovation Studio & Parent Company', icon: '🤖' },
+    { text: 'Custom AI Agents & Automation Solutions', icon: '⚡' },
+    { text: 'AI-Powered UPSC & Education Tools', icon: '🎓' },
+    { text: 'Intelligent Website Development', icon: '🌐' },
   ]
 
   return (
-    <section id="about" className="py-20 relative">
+    <section id="about" className="py-24 relative bg-gradient-to-br from-vedix-gray/5 to-transparent">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left - Team Image */}
-          <div className="relative">
-            <div className="glass rounded-2xl p-4 shadow-neon-blue/20 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/20 to-electric-purple/20 opacity-50"></div>
-              <img 
-                src={teamImage} 
-                alt="Our Tech Team" 
-                className="relative z-10 w-full h-auto rounded-lg object-cover"
-              />
-              {/* Holographic effect overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-neon-blue/10 to-transparent animate-pulse pointer-events-none"></div>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left - Content */}
+          <div ref={contentAnimation.ref} className="space-y-8 lg:order-1 order-2">
+            <div className="space-y-6">
+              <div className="inline-block px-4 py-2 bg-vedix-red/10 rounded-full">
+                <span className="text-vedix-red font-semibold text-sm uppercase tracking-wider">About VedixLab</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold leading-tight">
+                Revolutionizing AI <span className="text-vedix-red">Innovation</span>
+              </h2>
+              <div className="space-y-4 text-lg text-vedix-gray/90 leading-relaxed">
+                <p>
+                  VedixLab (Vedix AI) is an AI innovation studio and parent company at the forefront of artificial intelligence. We build and sell cutting-edge AI products, create AI-powered tools for UPSC preparation and education.
+                </p>
+                <p>
+                  Our mission is to democratize AI technology, making sophisticated artificial intelligence accessible and practical for businesses of all sizes. We combine deep technical expertise with creative innovation to deliver AI solutions that transform industries.
+                </p>
+              </div>
+            </div>
+
+            <div ref={highlightsAnimation.ref} className="space-y-4">
+              <h3 className="text-2xl font-heading font-semibold text-vedix-red mb-6">
+                Our AI Expertise:
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {highlights.map((highlight, index) => (
+                  <div
+                    key={index}
+                    className="apple-glass rounded-xl p-5 hover:shadow-apple-medium transition-all duration-300 hover:scale-105"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <span className="text-3xl text-vedix-red">{highlight.icon}</span>
+                      <span className="text-base font-medium text-vedix-gray/90 leading-tight">{highlight.text}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Right - Content */}
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-                About <span className="neon-text">Us</span>
-              </h2>
-              <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                We are a next-generation tech studio building intelligent digital products that help brands automate, scale, and dominate their market. Our blend of AI, SaaS engineering, and futuristic design delivers unmatched performance.
-              </p>
-            </div>
+          {/* Right - AI Innovation Studio */}
+          <div ref={imageAnimation.ref} className="relative lg:order-2 order-1">
+            <div className="relative">
+              {/* Background decorative elements */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-vedix-red/20 to-transparent rounded-3xl blur-xl opacity-50"></div>
+              <div className="absolute -top-8 -right-8 w-32 h-32 bg-vedix-red/10 rounded-full blur-2xl"></div>
 
-            <div className="space-y-4">
-              <h3 className="text-2xl font-heading font-semibold text-neon-blue mb-4">
-                Highlights:
-              </h3>
-              {highlights.map((highlight, index) => (
-                <div
-                  key={index}
-                  className="flex items-center space-x-4 glass rounded-lg p-4 glass-hover"
-                >
-                  <span className="text-2xl text-neon-blue">{highlight.icon}</span>
-                  <span className="text-lg text-gray-300">{highlight.text}</span>
+              {/* Main image container */}
+              <div className="apple-glass rounded-3xl p-6 shadow-apple-large relative overflow-hidden transform hover:scale-105 transition-transform duration-500">
+                <div className="relative">
+                  <img
+                    src={aiStudioImage}
+                    alt="AI Innovation Studio - VedixLab"
+                    className="w-full h-auto rounded-2xl object-cover shadow-lg"
+                  />
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
                 </div>
-              ))}
+
+                {/* Floating stats */}
+                <div className="absolute -bottom-4 -left-4 apple-glass rounded-xl p-4 shadow-apple-medium">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-vedix-red">100+</div>
+                    <div className="text-xs text-vedix-gray/70 uppercase tracking-wider">AI Projects</div>
+                  </div>
+                </div>
+
+                <div className="absolute -top-4 -right-4 apple-glass rounded-xl p-4 shadow-apple-medium">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-vedix-red">24/7</div>
+                    <div className="text-xs text-vedix-gray/70 uppercase tracking-wider">Support</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

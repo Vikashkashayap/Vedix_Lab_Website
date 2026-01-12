@@ -130,7 +130,7 @@ const BottomNavigation = () => {
   };
 
   return (
-    <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 glass border-t border-neon-blue/20 bg-space-black/95 backdrop-blur-xl safe-area-inset-bottom">
+    <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 glass border-t border-vedix-red/20 bg-vedix-black/95 backdrop-blur-xl safe-area-inset-bottom">
       <div className="flex items-center justify-around h-14 px-1">
         {navItems.map((item) => {
           const sectionId = item.href.replace('/#', '').replace('/', '');
@@ -143,17 +143,17 @@ const BottomNavigation = () => {
               key={item.label}
               to={item.href}
               className={`flex flex-col items-center justify-center flex-1 h-full transition-all duration-300 relative py-1 ${
-                isActive ? 'text-neon-blue' : 'text-gray-400'
-              } hover:text-neon-blue active:scale-95`}
+                isActive ? 'text-vedix-red' : 'text-gray-400'
+              } hover:text-vedix-red active:scale-95`}
             >
-              <div className={`${isActive ? 'scale-110 text-neon-blue' : ''} transition-all duration-300 mb-0.5`}>
+              <div className={`${isActive ? 'scale-110 text-vedix-red' : ''} transition-all duration-300 mb-0.5`}>
                 {item.icon}
               </div>
-              <span className={`text-[10px] font-medium ${isActive ? 'text-neon-blue' : ''} transition-colors`}>
+              <span className={`text-[10px] font-medium ${isActive ? 'text-vedix-red' : ''} transition-colors`}>
                 {item.label}
               </span>
               {isActive && (
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-neon-blue rounded-full shadow-[0_0_8px_rgba(10,227,255,0.8)]"></div>
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-vedix-red rounded-full shadow-[0_0_8px_rgba(0,212,170,0.8)]"></div>
               )}
             </Link>
           ) : (
@@ -162,17 +162,17 @@ const BottomNavigation = () => {
               href={item.href}
               onClick={(e) => handleClick(item.href, e)}
               className={`flex flex-col items-center justify-center flex-1 h-full transition-all duration-300 relative py-1 ${
-                isActive ? 'text-neon-blue' : 'text-gray-400'
-              } hover:text-neon-blue active:scale-95`}
+                isActive ? 'text-vedix-red' : 'text-gray-400'
+              } hover:text-vedix-red active:scale-95`}
             >
-              <div className={`${isActive ? 'scale-110 text-neon-blue' : ''} transition-all duration-300 mb-0.5`}>
+              <div className={`${isActive ? 'scale-110 text-vedix-red' : ''} transition-all duration-300 mb-0.5`}>
                 {item.icon}
               </div>
-              <span className={`text-[10px] font-medium ${isActive ? 'text-neon-blue' : ''} transition-colors`}>
+              <span className={`text-[10px] font-medium ${isActive ? 'text-vedix-red' : ''} transition-colors`}>
                 {item.label}
               </span>
               {isActive && (
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-neon-blue rounded-full shadow-[0_0_8px_rgba(10,227,255,0.8)]"></div>
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-vedix-red rounded-full shadow-[0_0_8px_rgba(0,212,170,0.8)]"></div>
               )}
             </a>
           );

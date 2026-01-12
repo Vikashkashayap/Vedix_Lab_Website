@@ -9,9 +9,9 @@ const Features = () => {
   ]
 
   return (
-    <section className="py-20 relative">
+    <section className="py-24 relative">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4 px-4">
             Why Businesses <span className="neon-text">Choose Us</span>
           </h2>
@@ -23,12 +23,12 @@ const Features = () => {
               key={index}
               className="glass glass-hover rounded-2xl p-8 text-center group relative overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/0 to-electric-purple/0 group-hover:from-neon-blue/10 group-hover:to-electric-purple/10 transition-all duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-vedix-red/0 to-vedix-red-light/0 group-hover:from-vedix-red/10 group-hover:to-vedix-red-light/10 transition-all duration-300"></div>
               <div className="relative z-10">
                 <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-heading font-semibold mb-3 text-neon-blue">
+                <h3 className="text-2xl font-heading font-semibold mb-3 text-vedix-red">
                   {feature.title}
                 </h3>
                 <p className="text-gray-400">

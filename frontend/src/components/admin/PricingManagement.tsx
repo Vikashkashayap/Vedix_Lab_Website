@@ -116,7 +116,7 @@ const PricingManagement = () => {
   };
 
   if (loading) {
-    return <div className="text-neon-blue">Loading pricing plans...</div>;
+    return <div className="text-vedix-red">Loading pricing plans...</div>;
   }
 
   return (
@@ -124,10 +124,10 @@ const PricingManagement = () => {
       <ModalComponent />
       <div>
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-heading font-bold text-neon-blue">Pricing Plans</h2>
+        <h2 className="text-2xl font-heading font-bold text-vedix-red">Pricing Plans</h2>
         <button
           onClick={() => setShowForm(!showForm)}
-          className="px-6 py-2 bg-neon-blue text-space-black rounded-lg font-semibold hover:shadow-neon-blue transition-all"
+          className="px-6 py-2 bg-vedix-red text-vedix-white rounded-lg font-semibold hover:shadow-vedix-red transition-all"
         >
           {showForm ? 'Cancel' : '+ Add Plan'}
         </button>
@@ -137,82 +137,82 @@ const PricingManagement = () => {
         <form onSubmit={handleSubmit} className="mb-8 glass rounded-xl p-6 space-y-4">
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-neon-blue mb-2">Name</label>
+              <label className="block text-sm font-semibold text-vedix-red mb-2">Name</label>
               <input
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="w-full px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-neon-blue mb-2">Tagline</label>
+              <label className="block text-sm font-semibold text-vedix-red mb-2">Tagline</label>
               <input
                 type="text"
                 value={formData.tagline}
                 onChange={(e) => setFormData({ ...formData, tagline: e.target.value })}
                 required
-                className="w-full px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-neon-blue mb-2">Price</label>
+              <label className="block text-sm font-semibold text-vedix-red mb-2">Price</label>
               <input
                 type="text"
                 value={formData.price}
                 onChange={(e) => setFormData({ ...formData, price: e.target.value })}
                 required
-                className="w-full px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
                 placeholder="₹9,999"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-neon-blue mb-2">Period</label>
+              <label className="block text-sm font-semibold text-vedix-red mb-2">Period</label>
               <input
                 type="text"
                 value={formData.period}
                 onChange={(e) => setFormData({ ...formData, period: e.target.value })}
-                className="w-full px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
                 placeholder="one-time or month"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-neon-blue mb-2">CTA Text</label>
+              <label className="block text-sm font-semibold text-vedix-red mb-2">CTA Text</label>
               <input
                 type="text"
                 value={formData.cta}
                 onChange={(e) => setFormData({ ...formData, cta: e.target.value })}
                 required
-                className="w-full px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-neon-blue mb-2">Order</label>
+              <label className="block text-sm font-semibold text-vedix-red mb-2">Order</label>
               <input
                 type="number"
                 value={formData.order}
                 onChange={(e) => setFormData({ ...formData, order: parseInt(e.target.value) || 0 })}
-                className="w-full px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-neon-blue mb-2">Features</label>
+            <label className="block text-sm font-semibold text-vedix-red mb-2">Features</label>
             <div className="flex gap-2 mb-2">
               <input
                 type="text"
                 value={featureInput}
                 onChange={(e) => setFeatureInput(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addFeature())}
-                className="flex-1 px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                className="flex-1 px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
                 placeholder="Add a feature"
               />
               <button
                 type="button"
                 onClick={addFeature}
-                className="px-4 py-2 bg-neon-blue text-space-black rounded-lg font-semibold"
+                className="px-4 py-2 bg-vedix-red text-vedix-white rounded-lg font-semibold"
               >
                 Add
               </button>
@@ -221,7 +221,7 @@ const PricingManagement = () => {
               {formData.features.map((feature, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-neon-blue/20 text-neon-blue rounded-lg flex items-center gap-2"
+                  className="px-3 py-1 bg-vedix-red/20 text-vedix-red rounded-lg flex items-center gap-2"
                 >
                   {feature}
                   <button
@@ -249,7 +249,7 @@ const PricingManagement = () => {
 
           <button
             type="submit"
-            className="px-6 py-2 bg-neon-blue text-space-black rounded-lg font-semibold hover:shadow-neon-blue transition-all"
+            className="px-6 py-2 bg-vedix-red text-vedix-white rounded-lg font-semibold hover:shadow-vedix-red transition-all"
           >
             {editingPlan ? 'Update Plan' : 'Create Plan'}
           </button>
@@ -260,15 +260,15 @@ const PricingManagement = () => {
         {plans.map((plan) => (
           <div
             key={plan._id}
-            className="glass rounded-xl p-6 border border-neon-blue/20"
+            className="glass rounded-xl p-6 border border-vedix-red/20"
           >
             <div className="flex justify-between items-start mb-4">
               <div>
-                <h3 className="text-xl font-heading font-bold text-neon-blue">{plan.name}</h3>
+                <h3 className="text-xl font-heading font-bold text-vedix-red">{plan.name}</h3>
                 <p className="text-gray-400 text-sm">{plan.tagline}</p>
               </div>
               {plan.popular && (
-                <span className="px-2 py-1 bg-neon-blue text-space-black text-xs font-semibold rounded">
+                <span className="px-2 py-1 bg-vedix-red text-vedix-white text-xs font-semibold rounded">
                   Popular
                 </span>
               )}
@@ -288,7 +288,7 @@ const PricingManagement = () => {
             <div className="flex gap-2">
               <button
                 onClick={() => handleEdit(plan)}
-                className="flex-1 px-4 py-2 border border-neon-blue text-neon-blue rounded-lg font-semibold hover:bg-neon-blue/10 transition-all"
+                className="flex-1 px-4 py-2 border border-vedix-red text-vedix-red rounded-lg font-semibold hover:bg-vedix-red/10 transition-all"
               >
                 Edit
               </button>

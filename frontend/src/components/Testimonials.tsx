@@ -1,10 +1,6 @@
+import React from 'react'
+
 const Testimonials = () => {
-  // Client avatar images from Unsplash
-  const clientAvatars = [
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-  ]
 
   const testimonials = [
     {
@@ -12,28 +8,25 @@ const Testimonials = () => {
       author: 'CEO',
       company: 'CloudWave',
       rating: 5,
-      avatar: clientAvatars[0],
     },
     {
       quote: 'The SaaS dashboard they built is world-class. Super fast, super clean.',
       author: 'Founder',
       company: 'DigitalSquare',
       rating: 5,
-      avatar: clientAvatars[1],
     },
     {
       quote: 'Exceptional service and cutting-edge solutions. Our revenue increased by 300% in 6 months.',
       author: 'CTO',
       company: 'TechFlow',
       rating: 5,
-      avatar: clientAvatars[2],
     },
   ]
 
   return (
-    <section className="py-20 relative">
+    <section className="py-24 relative">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
             What Our <span className="neon-text">Clients Say</span>
           </h2>
@@ -45,25 +38,30 @@ const Testimonials = () => {
               key={index}
               className="glass glass-hover rounded-2xl p-8 relative overflow-hidden group"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/0 to-electric-purple/0 group-hover:from-neon-blue/10 group-hover:to-electric-purple/10 transition-all duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-vedix-red/0 to-vedix-red-light/0 group-hover:from-vedix-red/10 group-hover:to-vedix-red-light/10 transition-all duration-300"></div>
               <div className="relative z-10">
-                <div className="flex justify-center mb-4">
-                  <img 
-                    src={testimonial.avatar} 
-                    alt={testimonial.author}
-                    className="w-20 h-20 rounded-full border-2 border-neon-blue/50 object-cover"
-                  />
+                <div className="flex justify-center mb-6">
+                  <div className="relative">
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-vedix-red/20 to-vedix-red-light/20 border-4 border-vedix-red/60 flex items-center justify-center shadow-lg hover:scale-105 transition-all duration-300 group-hover:border-vedix-red">
+                      <svg className="w-12 h-12 text-vedix-red group-hover:text-vedix-red-light transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z" />
+                      </svg>
+                    </div>
+                    <div className="absolute -bottom-1 -right-1 bg-vedix-red text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shadow-md animate-pulse">
+                      ✓
+                    </div>
+                  </div>
                 </div>
                 <div className="flex justify-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-2xl text-neon-blue">⭐</span>
+                    <span key={i} className="text-2xl text-vedix-red">⭐</span>
                   ))}
                 </div>
                 <p className="text-lg text-gray-300 mb-6 leading-relaxed italic text-center">
                   "{testimonial.quote}"
                 </p>
-                <div className="border-t border-neon-blue/30 pt-4 text-center">
-                  <p className="font-semibold text-neon-blue">{testimonial.author}</p>
+                <div className="border-t border-vedix-red/30 pt-4 text-center">
+                  <p className="font-semibold text-vedix-red">{testimonial.author}</p>
                   <p className="text-gray-400">{testimonial.company}</p>
                 </div>
               </div>

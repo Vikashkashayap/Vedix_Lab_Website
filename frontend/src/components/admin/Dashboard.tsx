@@ -41,14 +41,14 @@ const Dashboard = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-space-black flex items-center justify-center">
-        <div className="text-neon-blue text-xl">Loading...</div>
+      <div className="min-h-screen bg-vedix-black flex items-center justify-center">
+        <div className="text-vedix-red text-xl">Loading...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-space-black flex">
+    <div className="min-h-screen bg-vedix-black flex">
       {/* Sidebar */}
       <Sidebar
         activeTab={activeTab}
@@ -60,12 +60,12 @@ const Dashboard = () => {
       {/* Main Content */}
       <div className="flex-1 lg:ml-64">
         {/* Header */}
-        <header className="glass border-b border-neon-blue/20 sticky top-0 z-30">
+        <header className="glass border-b border-vedix-red/20 sticky top-0 z-30">
           <div className="px-4 md:px-6 py-4">
             <div className="flex items-center justify-between">
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="lg:hidden px-3 py-2 text-neon-blue hover:bg-neon-blue/10 rounded-lg transition-all"
+                className="lg:hidden px-3 py-2 text-vedix-red hover:bg-vedix-red/10 rounded-lg transition-all"
                 aria-label="Toggle sidebar"
               >
                 <svg
@@ -89,7 +89,7 @@ const Dashboard = () => {
               </div>
               <button
                 onClick={handleLogout}
-                className="px-4 md:px-6 py-2 border-2 border-neon-blue text-neon-blue rounded-lg font-semibold hover:bg-neon-blue/10 transition-all text-sm md:text-base"
+                className="px-4 md:px-6 py-2 border-2 border-vedix-red text-vedix-red rounded-lg font-semibold hover:bg-vedix-red/10 transition-all text-sm md:text-base"
               >
                 Logout
               </button>

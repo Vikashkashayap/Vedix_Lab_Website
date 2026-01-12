@@ -26,13 +26,13 @@ const Sidebar = ({ activeTab, onTabChange, isOpen, onClose }: SidebarProps) => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-64 glass border-r border-neon-blue/20 z-50 transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${
+        className={`fixed top-0 left-0 h-full w-64 glass border-r border-vedix-red/20 z-50 transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="flex flex-col h-full">
           {/* Logo/Header */}
-          <div className="p-6 border-b border-neon-blue/20">
+          <div className="p-6 border-b border-vedix-red/20">
             <h1 className="text-2xl font-heading font-bold neon-text">
               Admin Dashboard
             </h1>
@@ -49,8 +49,8 @@ const Sidebar = ({ activeTab, onTabChange, isOpen, onClose }: SidebarProps) => {
                 }}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg font-semibold transition-all ${
                   activeTab === item.id
-                    ? 'bg-neon-blue/20 text-neon-blue border border-neon-blue/50'
-                    : 'text-gray-400 hover:text-neon-blue hover:bg-cyber-navy/30'
+                    ? 'bg-vedix-red/20 text-vedix-red border border-vedix-red/50'
+                    : 'text-gray-400 hover:text-vedix-red hover:bg-vedix-card/30'
                 }`}
               >
                 <span className="text-xl">{item.icon}</span>

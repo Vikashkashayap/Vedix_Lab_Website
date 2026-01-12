@@ -53,9 +53,9 @@ const Modal = ({
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fadeIn"
       onClick={handleBackdropClick}
     >
-      <div className="glass rounded-2xl p-6 md:p-8 max-w-md w-full border border-neon-blue/30 shadow-2xl animate-scaleIn">
+      <div className="glass rounded-2xl p-6 md:p-8 max-w-md w-full border border-vedix-red/30 shadow-2xl animate-scaleIn">
         {title && (
-          <h3 className="text-xl md:text-2xl font-heading font-bold text-neon-blue mb-4">
+          <h3 className="text-xl md:text-2xl font-heading font-bold text-vedix-red mb-4">
             {title}
           </h3>
         )}
@@ -66,7 +66,7 @@ const Modal = ({
           {type === 'confirm' && (
             <button
               onClick={onClose}
-              className="px-6 py-2 border-2 border-neon-blue/50 text-neon-blue rounded-lg font-semibold hover:bg-neon-blue/10 transition-all"
+              className="px-6 py-2 border-2 border-vedix-red/50 text-vedix-red rounded-lg font-semibold hover:bg-vedix-red/10 transition-all"
             >
               {cancelText}
             </button>
@@ -75,8 +75,8 @@ const Modal = ({
             onClick={handleConfirm}
             className={`px-6 py-2 rounded-lg font-semibold transition-all ${
               type === 'confirm'
-                ? 'bg-neon-blue text-space-black hover:shadow-neon-blue'
-                : 'bg-neon-blue text-space-black hover:shadow-neon-blue'
+                ? 'bg-vedix-red text-vedix-white hover:shadow-vedix-red'
+                : 'bg-vedix-red text-vedix-white hover:shadow-vedix-red'
             }`}
           >
             {confirmText}

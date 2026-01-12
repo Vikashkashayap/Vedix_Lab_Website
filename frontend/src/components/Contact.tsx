@@ -45,24 +45,24 @@ const Contact = () => {
   return (
     <>
       <ModalComponent />
-      <section id="contact" className="py-20 relative">
+      <section id="contact" className="py-24 relative">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 px-4">
+        <div className="text-center mb-20 px-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4">
-            Let's Build Your <span className="neon-text">Next Big Thing</span>
+            Ready to Harness <span className="text-vedix-red">AI Power?</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8">
-            Tell us about your project and get a personalized strategy in 24 hours.
+          <p className="text-base sm:text-lg md:text-xl text-vedix-gray/70 max-w-2xl mx-auto mb-8">
+            Let's discuss how VedixLab can transform your business with custom AI agents, intelligent automation, and AI-powered solutions. Get your personalized AI strategy in 24 hours.
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto px-4">
           <div className="glass rounded-2xl p-6 sm:p-8 md:p-12 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/10 to-electric-purple/10"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-vedix-red/10 to-vedix-red-light/10"></div>
             <form onSubmit={handleSubmit} className="relative z-10 space-y-4 md:space-y-6">
               <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-neon-blue mb-2">
+                  <label htmlFor="name" className="block text-sm font-semibold text-vedix-red mb-2">
                     Name
                   </label>
                   <input
@@ -72,12 +72,12 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white focus:outline-none focus:border-neon-blue focus:ring-2 focus:ring-neon-blue/20 transition-all"
+                    className="w-full px-4 py-3 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white focus:outline-none focus:border-vedix-red focus:ring-2 focus:ring-vedix-red/20 transition-all"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-neon-blue mb-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-vedix-red mb-2">
                     Email
                   </label>
                   <input
@@ -87,7 +87,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white focus:outline-none focus:border-neon-blue focus:ring-2 focus:ring-neon-blue/20 transition-all"
+                    className="w-full px-4 py-3 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white focus:outline-none focus:border-vedix-red focus:ring-2 focus:ring-vedix-red/20 transition-all"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -95,7 +95,7 @@ const Contact = () => {
 
               <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div>
-                  <label htmlFor="projectType" className="block text-sm font-semibold text-neon-blue mb-2">
+                  <label htmlFor="projectType" className="block text-sm font-semibold text-vedix-red mb-2">
                     Project Type
                   </label>
                   <select
@@ -104,20 +104,22 @@ const Contact = () => {
                     value={formData.projectType}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white focus:outline-none focus:border-neon-blue focus:ring-2 focus:ring-neon-blue/20 transition-all"
+                    className="w-full px-4 py-3 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white focus:outline-none focus:border-vedix-red focus:ring-2 focus:ring-vedix-red/20 transition-all"
                   >
-                    <option value="">Select project type</option>
-                    <option value="saas">SaaS Development</option>
-                    <option value="website">Website Development</option>
-                    <option value="app">App Development</option>
-                    <option value="ai">AI Integration</option>
-                    <option value="dashboard">Dashboard & Admin Panel</option>
-                    <option value="seo">SEO & Marketing</option>
-                    <option value="other">Other</option>
+                    <option value="">Select AI project type</option>
+                    <option value="custom-ai-agent">Custom AI Agent Development</option>
+                    <option value="ai-automation">AI Automation Solutions</option>
+                    <option value="ai-website">AI-Powered Website</option>
+                    <option value="upsc-ai-tool">AI UPSC/Education Tools</option>
+                    <option value="ai-analytics">AI Analytics & Insights</option>
+                    <option value="ai-product">AI Product Development</option>
+                    <option value="ai-integration">AI System Integration</option>
+                    <option value="consultation">AI Strategy Consultation</option>
+                    <option value="other">Other AI Project</option>
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="budgetRange" className="block text-sm font-semibold text-neon-blue mb-2">
+                  <label htmlFor="budgetRange" className="block text-sm font-semibold text-vedix-red mb-2">
                     Budget Range
                   </label>
                   <select
@@ -126,7 +128,7 @@ const Contact = () => {
                     value={formData.budgetRange}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white focus:outline-none focus:border-neon-blue focus:ring-2 focus:ring-neon-blue/20 transition-all"
+                    className="w-full px-4 py-3 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white focus:outline-none focus:border-vedix-red focus:ring-2 focus:ring-vedix-red/20 transition-all"
                   >
                     <option value="">Select budget range</option>
                     <option value="5k-10k">₹5,000 - ₹10,000</option>
@@ -140,7 +142,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-neon-blue mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-vedix-red mb-2">
                   Message
                 </label>
                 <textarea
@@ -150,17 +152,17 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white focus:outline-none focus:border-neon-blue focus:ring-2 focus:ring-neon-blue/20 transition-all resize-none"
-                  placeholder="Tell us about your project requirements..."
+                  className="w-full px-4 py-3 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white focus:outline-none focus:border-vedix-red focus:ring-2 focus:ring-vedix-red/20 transition-all resize-none"
+                  placeholder="Describe your AI needs, current challenges, and desired outcomes..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full px-6 py-3 bg-neon-blue text-space-black rounded-lg font-semibold text-base hover:shadow-[0_0_20px_rgba(10,227,255,0.6)] transition-all duration-300 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="btn-red w-full disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                {loading ? 'Sending...' : 'Get Started'}
+                {loading ? 'Sending...' : 'Start AI Transformation'}
               </button>
             </form>
           </div>

@@ -73,14 +73,14 @@ const ContentManagement = () => {
   };
 
   if (loading) {
-    return <div className="text-neon-blue">Loading content...</div>;
+    return <div className="text-vedix-red">Loading content...</div>;
   }
 
   return (
     <>
       <ModalComponent />
       <div>
-      <h2 className="text-2xl font-heading font-bold text-neon-blue mb-6">Content Sections</h2>
+      <h2 className="text-2xl font-heading font-bold text-vedix-red mb-6">Content Sections</h2>
 
       <div className="space-y-6">
         {sections.map((section) => {
@@ -88,12 +88,12 @@ const ContentManagement = () => {
           const isEditing = editingSection === section.key;
 
           return (
-            <div key={section.key} className="glass rounded-xl p-6 border border-neon-blue/20">
+            <div key={section.key} className="glass rounded-xl p-6 border border-vedix-red/20">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-heading font-semibold text-neon-blue">{section.label}</h3>
+                <h3 className="text-xl font-heading font-semibold text-vedix-red">{section.label}</h3>
                 <button
                   onClick={() => handleEdit(section.key)}
-                  className="px-4 py-2 border border-neon-blue text-neon-blue rounded-lg font-semibold hover:bg-neon-blue/10 transition-all"
+                  className="px-4 py-2 border border-vedix-red text-vedix-red rounded-lg font-semibold hover:bg-vedix-red/10 transition-all"
                 >
                   {isEditing ? 'Cancel' : 'Edit'}
                 </button>
@@ -102,35 +102,35 @@ const ContentManagement = () => {
               {isEditing ? (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-semibold text-neon-blue mb-2">Title</label>
+                    <label className="block text-sm font-semibold text-vedix-red mb-2">Title</label>
                     <input
                       type="text"
                       value={formData.title || ''}
                       onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                      className="w-full px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                      className="w-full px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-neon-blue mb-2">Subtitle</label>
+                    <label className="block text-sm font-semibold text-vedix-red mb-2">Subtitle</label>
                     <input
                       type="text"
                       value={formData.subtitle || ''}
                       onChange={(e) => setFormData({ ...formData, subtitle: e.target.value })}
-                      className="w-full px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                      className="w-full px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-neon-blue mb-2">Description</label>
+                    <label className="block text-sm font-semibold text-vedix-red mb-2">Description</label>
                     <textarea
                       value={formData.description || ''}
                       onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                       rows={4}
-                      className="w-full px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                      className="w-full px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="px-6 py-2 bg-neon-blue text-space-black rounded-lg font-semibold hover:shadow-neon-blue transition-all"
+                    className="px-6 py-2 bg-vedix-red text-vedix-white rounded-lg font-semibold hover:shadow-vedix-red transition-all"
                   >
                     Save Changes
                   </button>

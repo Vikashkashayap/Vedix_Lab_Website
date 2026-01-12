@@ -88,7 +88,7 @@ const ServicesManagement = () => {
   };
 
   if (loading) {
-    return <div className="text-neon-blue">Loading services...</div>;
+    return <div className="text-vedix-red">Loading services...</div>;
   }
 
   return (
@@ -96,10 +96,10 @@ const ServicesManagement = () => {
       <ModalComponent />
       <div>
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-heading font-bold text-neon-blue">Services</h2>
+        <h2 className="text-2xl font-heading font-bold text-vedix-red">Services</h2>
         <button
           onClick={() => setShowForm(!showForm)}
-          className="px-6 py-2 bg-neon-blue text-space-black rounded-lg font-semibold hover:shadow-neon-blue transition-all"
+          className="px-6 py-2 bg-vedix-red text-vedix-white rounded-lg font-semibold hover:shadow-vedix-red transition-all"
         >
           {showForm ? 'Cancel' : '+ Add Service'}
         </button>
@@ -109,61 +109,61 @@ const ServicesManagement = () => {
         <form onSubmit={handleSubmit} className="mb-8 glass rounded-xl p-6 space-y-4">
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-neon-blue mb-2">Icon (Emoji)</label>
+              <label className="block text-sm font-semibold text-vedix-red mb-2">Icon (Emoji)</label>
               <input
                 type="text"
                 value={formData.icon}
                 onChange={(e) => setFormData({ ...formData, icon: e.target.value })}
                 required
-                className="w-full px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
                 placeholder="🚀"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-neon-blue mb-2">Title</label>
+              <label className="block text-sm font-semibold text-vedix-red mb-2">Title</label>
               <input
                 type="text"
                 value={formData.title}
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                 required
-                className="w-full px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
               />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-sm font-semibold text-neon-blue mb-2">Description</label>
+              <label className="block text-sm font-semibold text-vedix-red mb-2">Description</label>
               <textarea
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 required
                 rows={3}
-                className="w-full px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
               />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-sm font-semibold text-neon-blue mb-2">Image URL</label>
+              <label className="block text-sm font-semibold text-vedix-red mb-2">Image URL</label>
               <input
                 type="url"
                 value={formData.image}
                 onChange={(e) => setFormData({ ...formData, image: e.target.value })}
                 required
-                className="w-full px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
                 placeholder="https://images.unsplash.com/..."
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-neon-blue mb-2">Order</label>
+              <label className="block text-sm font-semibold text-vedix-red mb-2">Order</label>
               <input
                 type="number"
                 value={formData.order}
                 onChange={(e) => setFormData({ ...formData, order: parseInt(e.target.value) || 0 })}
-                className="w-full px-4 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white"
               />
             </div>
           </div>
 
           <button
             type="submit"
-            className="px-6 py-2 bg-neon-blue text-space-black rounded-lg font-semibold hover:shadow-neon-blue transition-all"
+            className="px-6 py-2 bg-vedix-red text-vedix-white rounded-lg font-semibold hover:shadow-vedix-red transition-all"
           >
             {editingService ? 'Update Service' : 'Create Service'}
           </button>
@@ -174,15 +174,15 @@ const ServicesManagement = () => {
         {services.map((service) => (
           <div
             key={service._id}
-            className="glass rounded-xl p-6 border border-neon-blue/20"
+            className="glass rounded-xl p-6 border border-vedix-red/20"
           >
             <div className="text-4xl mb-2">{service.icon}</div>
-            <h3 className="text-xl font-heading font-bold text-neon-blue mb-2">{service.title}</h3>
+            <h3 className="text-xl font-heading font-bold text-vedix-red mb-2">{service.title}</h3>
             <p className="text-gray-400 text-sm mb-4 line-clamp-2">{service.description}</p>
             <div className="flex gap-2">
               <button
                 onClick={() => handleEdit(service)}
-                className="flex-1 px-4 py-2 border border-neon-blue text-neon-blue rounded-lg font-semibold hover:bg-neon-blue/10 transition-all"
+                className="flex-1 px-4 py-2 border border-vedix-red text-vedix-red rounded-lg font-semibold hover:bg-vedix-red/10 transition-all"
               >
                 Edit
               </button>

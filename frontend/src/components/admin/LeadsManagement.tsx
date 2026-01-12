@@ -80,7 +80,7 @@ const LeadsManagement = () => {
     : leads.filter(lead => lead.status === filterStatus);
 
   if (loading) {
-    return <div className="text-neon-blue">Loading leads...</div>;
+    return <div className="text-vedix-red">Loading leads...</div>;
   }
 
   return (
@@ -88,7 +88,7 @@ const LeadsManagement = () => {
       <ModalComponent />
       <div>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
-        <h2 className="text-2xl font-heading font-bold text-neon-blue">Client Leads</h2>
+        <h2 className="text-2xl font-heading font-bold text-vedix-red">Client Leads</h2>
         
         {/* Status Filter */}
         <div className="flex gap-2 flex-wrap">
@@ -96,8 +96,8 @@ const LeadsManagement = () => {
             onClick={() => setFilterStatus('all')}
             className={`px-4 py-2 rounded-lg font-semibold transition-all ${
               filterStatus === 'all'
-                ? 'bg-neon-blue text-space-black'
-                : 'bg-cyber-navy/50 text-gray-400 hover:text-neon-blue border border-neon-blue/30'
+                ? 'bg-vedix-red text-vedix-white'
+                : 'bg-vedix-card/50 text-gray-400 hover:text-vedix-red border border-vedix-red/30'
             }`}
           >
             All ({leads.length})
@@ -107,7 +107,7 @@ const LeadsManagement = () => {
             className={`px-4 py-2 rounded-lg font-semibold transition-all ${
               filterStatus === 'new'
                 ? 'bg-blue-500 text-white'
-                : 'bg-cyber-navy/50 text-gray-400 hover:text-blue-400 border border-blue-500/30'
+                : 'bg-vedix-card/50 text-gray-400 hover:text-blue-400 border border-blue-500/30'
             }`}
           >
             New ({leads.filter(l => l.status === 'new').length})
@@ -117,7 +117,7 @@ const LeadsManagement = () => {
             className={`px-4 py-2 rounded-lg font-semibold transition-all ${
               filterStatus === 'contacted'
                 ? 'bg-yellow-500 text-white'
-                : 'bg-cyber-navy/50 text-gray-400 hover:text-yellow-400 border border-yellow-500/30'
+                : 'bg-vedix-card/50 text-gray-400 hover:text-yellow-400 border border-yellow-500/30'
             }`}
           >
             Contacted ({leads.filter(l => l.status === 'contacted').length})
@@ -127,7 +127,7 @@ const LeadsManagement = () => {
             className={`px-4 py-2 rounded-lg font-semibold transition-all ${
               filterStatus === 'qualified'
                 ? 'bg-purple-500 text-white'
-                : 'bg-cyber-navy/50 text-gray-400 hover:text-purple-400 border border-purple-500/30'
+                : 'bg-vedix-card/50 text-gray-400 hover:text-purple-400 border border-purple-500/30'
             }`}
           >
             Qualified ({leads.filter(l => l.status === 'qualified').length})
@@ -144,13 +144,13 @@ const LeadsManagement = () => {
           {filteredLeads.map((lead) => (
             <div
               key={lead._id}
-              className="glass rounded-xl p-6 border border-neon-blue/20 hover:border-neon-blue/40 transition-all"
+              className="glass rounded-xl p-6 border border-vedix-red/20 hover:border-vedix-red/40 transition-all"
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                 <div className="flex-1 space-y-3">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="text-xl font-heading font-bold text-neon-blue mb-1">
+                      <h3 className="text-xl font-heading font-bold text-vedix-red mb-1">
                         {lead.name}
                       </h3>
                       <p className="text-gray-400 text-sm">{lead.email}</p>
@@ -186,13 +186,13 @@ const LeadsManagement = () => {
                 </div>
 
                 <div className="flex flex-col gap-2 md:min-w-[200px]">
-                  <label className="text-sm font-semibold text-neon-blue mb-1">
+                  <label className="text-sm font-semibold text-vedix-red mb-1">
                     Update Status:
                   </label>
                   <select
                     value={lead.status}
                     onChange={(e) => handleStatusChange(lead._id, e.target.value)}
-                    className="px-3 py-2 bg-cyber-navy/50 border border-neon-blue/30 rounded-lg text-white text-sm focus:outline-none focus:border-neon-blue"
+                    className="px-3 py-2 bg-vedix-card/50 border border-vedix-red/30 rounded-lg text-white text-sm focus:outline-none focus:border-vedix-red"
                   >
                     <option value="new">New</option>
                     <option value="contacted">Contacted</option>
