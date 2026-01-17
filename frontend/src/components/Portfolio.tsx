@@ -105,7 +105,7 @@ const Portfolio = () => {
 
 
   return (
-    <section id="portfolio" className="py-24 relative">
+    <section id="portfolio" className="py-24 relative overflow-x-hidden">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div ref={headerAnimation.ref} className="text-center mb-20">

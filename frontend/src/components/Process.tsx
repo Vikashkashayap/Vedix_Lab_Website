@@ -130,27 +130,27 @@ const Process = () => {
   ];
 
   return (
-    <section id="process" className="py-24 relative">
-      <div className="container mx-auto px-6">
+    <section id="process" className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div ref={headerAnimation.ref} className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 rounded-full apple-glass text-sm font-medium text-vedix-red mb-6">
-            <span className="w-2 h-2 bg-vedix-red rounded-full mr-3 animate-apple-pulse"></span>
+        <div ref={headerAnimation.ref} className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+          <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-full apple-glass text-xs sm:text-sm font-medium text-vedix-red mb-4 sm:mb-5 md:mb-6">
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-vedix-red rounded-full mr-2 sm:mr-3 animate-apple-pulse"></span>
             Our AI Development Process
           </div>
 
-          <h2 className="heading-large mb-6 text-balance">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.2] mb-4 sm:mb-5 md:mb-6 text-balance">
             Systematic <span className="text-vedix-red">AI Innovation</span> Methodology
           </h2>
 
-          <p className="body-large max-w-3xl mx-auto text-vedix-white/70 text-balance">
+          <p className="text-base sm:text-lg md:text-xl leading-[1.7] max-w-3xl mx-auto text-vedix-white/70 text-balance px-4 sm:px-0">
             Our proven 6-step AI development process ensures successful deployment of intelligent solutions that deliver measurable business value and scale with your growth.
           </p>
         </div>
 
         {/* Process Steps */}
-        <div ref={processAnimation.ref} className="mb-20">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={processAnimation.ref} className="mb-10 sm:mb-12 md:mb-16 lg:mb-20">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
             {processSteps.map((step, index) => (
               <div
                 key={index}
@@ -159,35 +159,35 @@ const Process = () => {
               >
                 {/* Connection Line */}
                 {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-vedix-red/50 to-transparent z-0 transform -translate-x-4"></div>
+                  <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-vedix-red/50 to-transparent z-0 transform translate-x-0 max-w-[calc(100%-1rem)]"></div>
                 )}
 
-                <div className="apple-glass p-6 h-full hover:scale-[1.02] transition-all duration-500 hover:shadow-apple-medium relative z-10">
-                  <div className="relative">
+                <div className="apple-glass p-4 sm:p-5 md:p-6 lg:p-8 rounded-xl h-full hover:scale-[1.02] transition-all duration-200 hover:shadow-apple-medium relative z-10">
+                  <div className="relative h-full flex flex-col">
                     {/* Step Number and Icon */}
-                    <div className="flex items-center mb-4">
-                      <div className="flex items-center justify-center w-12 h-12 bg-vedix-red/10 rounded-full mr-4">
-                        <span className={`text-xl ${step.color}`}>{step.icon}</span>
+                    <div className="flex items-center mb-3 sm:mb-4 md:mb-5">
+                      <div className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-vedix-red/10 rounded-full mr-3 sm:mr-4">
+                        <span className={`text-base sm:text-lg md:text-xl ${step.color}`}>{step.icon}</span>
                       </div>
-                      <div className="text-2xl font-bold font-mono text-vedix-red">
+                      <div className="text-lg sm:text-xl md:text-2xl font-bold font-mono text-vedix-red">
                         {step.step}
                       </div>
                     </div>
 
                     {/* Title and Description */}
-                    <h3 className="text-xl font-heading font-semibold mb-3 text-vedix-white group-hover:text-vedix-red transition-colors duration-300">
+                    <h3 className="text-base sm:text-lg md:text-xl font-semibold leading-[1.35] mb-2 sm:mb-3 md:mb-4 text-vedix-white group-hover:text-vedix-red transition-colors duration-200">
                       {step.title}
                     </h3>
 
-                    <p className="text-vedix-gray/80 leading-relaxed text-sm mb-4">
+                    <p className="text-sm sm:text-base md:text-lg leading-[1.7] text-vedix-gray/80 mb-3 sm:mb-4 md:mb-5 flex-grow">
                       {step.description}
                     </p>
 
                     {/* Details */}
-                    <div className="space-y-2">
+                    <div className="space-y-1.5 sm:space-y-2 mt-auto">
                       {step.details.map((detail, idx) => (
-                        <div key={idx} className="flex items-center text-sm">
-                          <div className="w-1.5 h-1.5 bg-vedix-red rounded-full mr-3 flex-shrink-0"></div>
+                        <div key={idx} className="flex items-center text-xs sm:text-sm">
+                          <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-vedix-red rounded-full mr-2 sm:mr-3 flex-shrink-0"></div>
                           <span className="text-vedix-gray/70">{detail}</span>
                         </div>
                       ))}
@@ -201,29 +201,29 @@ const Process = () => {
 
         {/* Methodology Principles */}
         <div ref={methodologyAnimation.ref}>
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-heading font-bold mb-4">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.2] mb-3 sm:mb-4 md:mb-5">
               Our <span className="text-vedix-red">AI Development</span> Principles
             </h3>
-            <p className="text-vedix-gray/70 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg leading-[1.7] text-vedix-gray/70 max-w-2xl mx-auto px-4 sm:px-0">
               Core principles that guide every AI project we undertake, ensuring ethical, scalable, and impactful solutions.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
             {methodologyPrinciples.map((principle, index) => (
               <div
                 key={index}
-                className="apple-glass p-6 text-center group hover:scale-[1.02] transition-all duration-300 hover:shadow-apple-medium"
+                className="apple-glass p-4 sm:p-5 md:p-6 lg:p-8 rounded-xl text-center group hover:scale-[1.02] transition-all duration-200 hover:shadow-apple-medium h-full flex flex-col"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="text-4xl mb-4 text-vedix-red/80 group-hover:text-vedix-red transition-colors duration-300">
+                <div className="text-2xl sm:text-3xl md:text-4xl mb-3 sm:mb-4 md:mb-5 text-vedix-red/80 group-hover:text-vedix-red transition-colors duration-200">
                   {principle.icon}
                 </div>
-                <h4 className="text-lg font-heading font-semibold mb-3 text-vedix-white">
+                <h4 className="text-base sm:text-lg md:text-xl font-semibold leading-[1.35] mb-2 sm:mb-3 md:mb-4 text-vedix-white">
                   {principle.title}
                 </h4>
-                <p className="text-vedix-gray/80 text-sm leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg leading-[1.7] text-vedix-gray/80 flex-grow">
                   {principle.description}
                 </p>
               </div>
@@ -232,12 +232,12 @@ const Process = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="apple-glass p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-heading font-bold mb-4">
+        <div className="text-center mt-12 sm:mt-14 md:mt-16 lg:mt-20">
+          <div className="apple-glass p-6 sm:p-7 md:p-8 lg:p-10 max-w-4xl mx-auto">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold leading-[1.2] mb-3 sm:mb-4 md:mb-5">
               Ready to Start Your <span className="text-vedix-red">AI Journey?</span>
             </h3>
-            <p className="text-vedix-gray/80 mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg leading-[1.7] text-vedix-gray/80 mb-6 sm:mb-7 md:mb-8">
               Our systematic approach ensures your AI project delivers real business value. Let's discuss how we can transform your operations with intelligent automation.
             </p>
             <button
@@ -250,11 +250,11 @@ const Process = () => {
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                 }
               }}
-              className="btn-red min-h-[52px] px-8 text-base font-semibold tracking-wide touch-manipulation group relative overflow-hidden shadow-apple-red-glow hover:shadow-apple-red-glow-hover transition-all duration-300"
+              className="btn-red h-11 px-6 text-sm font-semibold touch-manipulation group relative overflow-hidden shadow-apple-red-glow hover:shadow-apple-red-glow-hover transition-all duration-200"
             >
               <span className="relative z-10 flex items-center">
                 Begin Your AI Transformation
-                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </span>

@@ -28,7 +28,7 @@ function HomePage() {
       <Services />
       <Products />
       <AIAgentStudio />
-      <Process />
+      {/* <Process /> */}
       {/* <Portfolio /> */}
       <Features />
       {/* <Pricing /> */}

@@ -71,9 +71,9 @@ const AnimatedLines: React.FC = () => {
         const patterns = [
           // Horizontal flow
           () => ({
-            x1: -100,
+            x1: Math.max(-50, -100),
             y1: Math.random() * viewportHeight,
-            x2: viewportWidth + 100,
+            x2: Math.min(viewportWidth + 50, viewportWidth + 100),
             y2: Math.random() * viewportHeight,
             direction: 0
           }),
@@ -87,18 +87,18 @@ const AnimatedLines: React.FC = () => {
           }),
           // Diagonal flow (top-left to bottom-right)
           () => ({
-            x1: -100,
-            y1: -100,
-            x2: viewportWidth + 100,
-            y2: viewportHeight + 100,
+            x1: Math.max(-50, -100),
+            y1: Math.max(-50, -100),
+            x2: Math.min(viewportWidth + 50, viewportWidth + 100),
+            y2: Math.min(viewportHeight + 50, viewportHeight + 100),
             direction: 2
           }),
           // Diagonal flow (top-right to bottom-left)
           () => ({
-            x1: viewportWidth + 100,
-            y1: -100,
-            x2: -100,
-            y2: viewportHeight + 100,
+            x1: Math.min(viewportWidth + 50, viewportWidth + 100),
+            y1: Math.max(-50, -100),
+            x2: Math.max(-50, -100),
+            y2: Math.min(viewportHeight + 50, viewportHeight + 100),
             direction: 3
           }),
           // Curved connection pattern
@@ -435,11 +435,13 @@ const AnimatedLines: React.FC = () => {
   };
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ width: '100%', height: '100%', maxWidth: '100vw' }}>
       <svg
         ref={svgRef}
         className="absolute inset-0 w-full h-full"
-        style={{ filter: 'blur(0.5px)' }}
+        style={{ filter: 'blur(0.5px)', maxWidth: '100vw', overflow: 'hidden' }}
+        viewBox={`0 0 ${window.innerWidth} ${window.innerHeight}`}
+        preserveAspectRatio="xMidYMid slice"
       >
         <defs>
           {/* Gradient definitions for line effects */}

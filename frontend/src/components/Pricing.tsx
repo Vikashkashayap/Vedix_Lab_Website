@@ -65,7 +65,7 @@ const Pricing = () => {
   }
 
   return (
-    <section id="pricing" ref={sectionRef} className="py-24 relative">
+    <section id="pricing" ref={sectionRef} className="py-24 relative overflow-x-hidden">
       <div className="container mx-auto px-6">
         <div className={`text-center mb-20 px-4 transition-all duration-1000 ${sectionVisible ? 'animate-slideInTop' : 'opacity-0'}`}>
           <div className="inline-flex items-center px-4 py-2 rounded-full glass border border-vedix-red/20 text-sm font-medium text-vedix-red mb-6">

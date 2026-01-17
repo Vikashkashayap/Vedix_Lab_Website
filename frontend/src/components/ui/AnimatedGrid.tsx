@@ -311,11 +311,13 @@ const AnimatedGrid: React.FC = () => {
   };
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ width: '100%', height: '100%', maxWidth: '100vw' }}>
       <svg
         ref={svgRef}
         className="absolute inset-0 w-full h-full"
-        style={{ filter: 'blur(0.3px)' }}
+        style={{ filter: 'blur(0.3px)', maxWidth: '100vw', overflow: 'hidden' }}
+        viewBox={`0 0 ${Math.min(dimensions.width || window.innerWidth, window.innerWidth)} ${Math.min(dimensions.height || window.innerHeight, window.innerHeight)}`}
+        preserveAspectRatio="xMidYMid slice"
       >
         <defs>
           {/* Subtle gradients for connections */}

@@ -98,48 +98,48 @@ const AIAgentStudio = () => {
   ];
 
   return (
-    <section id="ai-studio" className="py-24 relative">
+    <section id="ai-studio" className="py-16 md:py-20 relative">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div ref={headerAnimation.ref} className="text-center mb-20">
+        <div ref={headerAnimation.ref} className="text-center mt-12">
           <div className="inline-flex items-center px-4 py-2 rounded-full apple-glass text-sm font-medium text-vedix-red mb-6">
             <span className="w-2 h-2 bg-vedix-red rounded-full mr-3 animate-apple-pulse"></span>
             AI Agent Studio
           </div>
 
-          <h2 className="heading-large mb-6 text-balance">
+          <h2 className="text-3xl md:text-4xl font-bold leading-[1.2] mb-6 text-balance">
             Custom <span className="text-vedix-red">AI Agents</span> Built for Your Business
           </h2>
 
-          <p className="body-large max-w-3xl mx-auto text-vedix-white/70 text-balance">
+          <p className="text-base md:text-lg leading-[1.7] max-w-3xl mx-auto text-vedix-white/70 text-balance">
             Our AI Agent Studio specializes in creating intelligent agents that understand your business, automate complex tasks, and deliver measurable results. From conversational assistants to analytical powerhouses, we build AI that works.
           </p>
         </div>
 
         {/* Agent Types Grid */}
-        <div ref={agentsAnimation.ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div ref={agentsAnimation.ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 mb-12 md:mb-20">
           {agentTypes.map((agent, index) => (
             <div
               key={index}
               className="group relative"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="apple-glass p-6 h-full hover:scale-[1.02] transition-all duration-500 hover:shadow-apple-medium relative overflow-hidden">
+              <div className="apple-glass p-5 md:p-6 rounded-xl h-full hover:scale-[1.02] transition-all duration-200 hover:shadow-apple-medium relative overflow-hidden">
                 <div className="relative z-10">
                   {/* Icon and Title */}
                   <div className="flex items-start mb-4">
-                    <div className={`text-3xl mr-3 ${agent.color}`}>
+                    <div className={`text-2xl md:text-3xl mr-3 ${agent.color}`}>
                       {agent.icon}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-heading font-semibold mb-2 text-vedix-white group-hover:text-vedix-red transition-colors duration-300">
+                      <h3 className="text-lg font-semibold leading-[1.35] mb-2 text-vedix-white group-hover:text-vedix-red transition-colors duration-200">
                         {agent.title}
                       </h3>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-vedix-gray/80 leading-relaxed text-sm mb-6">
+                  <p className="text-base md:text-lg leading-[1.7] text-vedix-gray/80 mb-5 md:mb-6">
                     {agent.description}
                   </p>
 
@@ -179,12 +179,12 @@ const AIAgentStudio = () => {
         </div>
 
         {/* Development Process */}
-        <div ref={processAnimation.ref} className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-heading font-bold mb-4">
+        <div ref={processAnimation.ref} className="mb-12 md:mb-16">
+          <div className="text-center mb-12 mt-12">
+            <h3 className="text-3xl md:text-4xl font-bold leading-[1.2] mb-4">
               Our <span className="text-vedix-red">AI Development</span> Process
             </h3>
-            <p className="text-vedix-gray/70 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg leading-[1.7] text-vedix-gray/70 max-w-2xl mx-auto">
               A systematic approach to building production-ready AI agents that deliver real business value.
             </p>
           </div>
@@ -197,14 +197,14 @@ const AIAgentStudio = () => {
                   <div className="hidden xl:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-vedix-red to-transparent z-0"></div>
                 )}
 
-                <div className="apple-glass p-6 text-center relative z-10">
-                  <div className="text-2xl font-bold font-mono text-vedix-red mb-3">
+                <div className="apple-glass p-5 md:p-6 rounded-xl text-center relative z-10 hover:scale-[1.02] transition-all duration-200 hover:shadow-apple-medium">
+                  <div className="text-xl md:text-2xl font-bold font-mono text-vedix-red mb-3">
                     {step.step}
                   </div>
-                  <h4 className="text-lg font-heading font-semibold mb-3 text-vedix-white">
+                  <h4 className="text-lg font-semibold leading-[1.35] mb-3 text-vedix-white">
                     {step.title}
                   </h4>
-                  <p className="text-vedix-gray/80 text-sm leading-relaxed">
+                  <p className="text-base md:text-lg leading-[1.7] text-vedix-gray/80">
                     {step.description}
                   </p>
                 </div>
@@ -215,11 +215,11 @@ const AIAgentStudio = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <div className="apple-glass p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-heading font-bold mb-4">
+          <div className="apple-glass p-6 md:p-8 rounded-xl max-w-4xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-bold leading-[1.2] mb-4">
               Ready to Build Your <span className="text-vedix-red">Custom AI Agent?</span>
             </h3>
-            <p className="text-vedix-gray/80 mb-8 leading-relaxed">
+            <p className="text-base md:text-lg leading-[1.7] text-vedix-gray/80 mb-8">
               Let's discuss your requirements and create an AI agent that transforms your business operations. Our team of AI experts is ready to bring your vision to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -235,11 +235,11 @@ const AIAgentStudio = () => {
                   }
                 }}
                 onMouseEnter={() => hoverSound()}
-                className="btn-red min-h-[52px] px-8 text-base font-semibold tracking-wide touch-manipulation group relative overflow-hidden shadow-apple-red-glow hover:shadow-apple-red-glow-hover transition-all duration-300"
+                className="btn-red h-11 px-6 text-sm font-semibold touch-manipulation group relative overflow-hidden shadow-apple-red-glow hover:shadow-apple-red-glow-hover transition-all duration-200"
               >
                 <span className="relative z-10 flex items-center">
                   Start Your AI Agent Project
-                  <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
@@ -257,11 +257,11 @@ const AIAgentStudio = () => {
                   }
                 }}
                 onMouseEnter={() => hoverSound()}
-                className="btn-outline-red min-h-[52px] px-8 text-base font-semibold tracking-wide touch-manipulation group shadow-apple-subtle hover:shadow-apple-medium transition-all duration-300"
+                className="btn-outline-red h-11 px-6 text-sm font-semibold touch-manipulation group shadow-apple-subtle hover:shadow-apple-medium transition-all duration-200"
               >
                 <span className="relative z-10 flex items-center">
                   Explore Agent Types
-                  <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0l-3-3m3 3l-3 3" />
                   </svg>
                 </span>
