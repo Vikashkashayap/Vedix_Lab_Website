@@ -193,7 +193,6 @@ const Portfolio = () => {
                   {/* View Details Button */}
                   <button
                     onClick={() => clickSound()}
-                    onMouseEnter={() => hoverSound()}
                     className="w-full btn-outline-red min-h-[36px] text-sm font-medium tracking-wide touch-manipulation group relative overflow-hidden"
                   >
                     <span className="relative z-10 flex items-center justify-center">
@@ -230,7 +229,6 @@ const Portfolio = () => {
                     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                   }
                 }}
-                onMouseEnter={() => hoverSound()}
                 className="btn-red min-h-[52px] px-8 text-base font-semibold tracking-wide touch-manipulation group relative overflow-hidden shadow-apple-red-glow hover:shadow-apple-red-glow-hover transition-all duration-300"
               >
                 <span className="relative z-10 flex items-center">
@@ -252,7 +250,6 @@ const Portfolio = () => {
                     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                   }
                 }}
-                onMouseEnter={() => hoverSound()}
                 className="btn-outline-red min-h-[52px] px-8 text-base font-semibold tracking-wide touch-manipulation group shadow-apple-subtle hover:shadow-apple-medium transition-all duration-300"
               >
                 <span className="relative z-10 flex items-center">

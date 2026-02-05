@@ -38,7 +38,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex items-center gap-3 sm:gap-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/vedixlab/"
                 className="group relative w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center rounded-xl apple-glass hover:bg-vedix-red/10 transition-all duration-200 hover:scale-110"
                 aria-label="LinkedIn"
               >
@@ -79,39 +79,12 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* AI Services Section */}
+          {/* Our Products Section */}
           <div>
             <h4 className="text-base sm:text-lg md:text-xl font-semibold text-vedix-white mb-4 sm:mb-5 md:mb-6">
-              AI Services
+              Our Products
             </h4>
             <ul className="space-y-2.5 sm:space-y-3 md:space-y-4">
-              <li>
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="text-sm sm:text-base text-vedix-gray/70 hover:text-vedix-red transition-all duration-200 hover:translate-x-1 inline-flex items-center group"
-                >
-                  <span className="w-1.5 h-1.5 bg-vedix-red/50 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                  Custom AI Agents
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="text-sm sm:text-base text-vedix-gray/70 hover:text-vedix-red transition-all duration-200 hover:translate-x-1 inline-flex items-center group"
-                >
-                  <span className="w-1.5 h-1.5 bg-vedix-red/50 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                  AI Automation
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="text-sm sm:text-base text-vedix-gray/70 hover:text-vedix-red transition-all duration-200 hover:translate-x-1 inline-flex items-center group"
-                >
-                  <span className="w-1.5 h-1.5 bg-vedix-red/50 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                  AI-Powered Websites
-                </button>
-              </li>
               <li>
                 <button
                   onClick={() => scrollToSection('products')}
@@ -119,6 +92,24 @@ const Footer = () => {
                 >
                   <span className="w-1.5 h-1.5 bg-vedix-red/50 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                   AI Products
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection('features')}
+                  className="text-sm sm:text-base text-vedix-gray/70 hover:text-vedix-red transition-all duration-200 hover:translate-x-1 inline-flex items-center group"
+                >
+                  <span className="w-1.5 h-1.5 bg-vedix-red/50 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  Why Choose Us
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection('testimonials')}
+                  className="text-sm sm:text-base text-vedix-gray/70 hover:text-vedix-red transition-all duration-200 hover:translate-x-1 inline-flex items-center group"
+                >
+                  <span className="w-1.5 h-1.5 bg-vedix-red/50 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  Testimonials
                 </button>
               </li>
             </ul>
@@ -137,24 +128,6 @@ const Footer = () => {
                 >
                   <span className="w-1.5 h-1.5 bg-vedix-red/50 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                   About VedixLab
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('ai-studio')}
-                  className="text-sm sm:text-base text-vedix-gray/70 hover:text-vedix-red transition-all duration-200 hover:translate-x-1 inline-flex items-center group"
-                >
-                  <span className="w-1.5 h-1.5 bg-vedix-red/50 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                  AI Agent Studio
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('process')}
-                  className="text-sm sm:text-base text-vedix-gray/70 hover:text-vedix-red transition-all duration-200 hover:translate-x-1 inline-flex items-center group"
-                >
-                  <span className="w-1.5 h-1.5 bg-vedix-red/50 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                  Our Process
                 </button>
               </li>
               <li>

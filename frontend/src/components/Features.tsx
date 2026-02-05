@@ -35,7 +35,7 @@ const Features = () => {
   ]
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-x-hidden">
+    <section id="features" className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-x-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* ================= HEADER ================= */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">

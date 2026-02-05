@@ -3,10 +3,9 @@ import { Link, useLocation } from 'react-router-dom'
 
 const NAV_ITEMS = [
   { label: 'About', id: 'about' },
-  { label: 'Services', id: 'services' },
   { label: 'Products', id: 'products' },
-  { label: 'AI Studio', id: 'ai-studio' },
-  { label: 'Process', id: 'process' },
+  { label: 'Features', id: 'features' },
+  { label: 'Testimonials', id: 'testimonials' },
   { label: 'Contact', id: 'contact' },
 ]
 

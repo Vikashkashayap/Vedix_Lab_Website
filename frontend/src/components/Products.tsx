@@ -1,6 +1,4 @@
 import React from 'react'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
-import { useAudioFeedback } from '../hooks/useAudioFeedback'
 
 interface Product {
   id: string
@@ -13,10 +11,6 @@ interface Product {
 }
 
 const Products = () => {
-  const { clickSound, hoverSound } = useAudioFeedback()
-
-  const headerAnimation = useScrollAnimation<HTMLDivElement>({ delay: 100 })
-  const productsAnimation = useScrollAnimation<HTMLDivElement>({ delay: 300 })
 
   const products: Product[] = [
     {
@@ -77,11 +71,7 @@ const Products = () => {
     }
 
     return (
-      <button
-        onClick={clickSound}
-        onMouseEnter={hoverSound}
-        className="btn-red h-11 px-6 text-sm font-semibold group relative overflow-hidden"
-      >
+      <button className="btn-red h-11 px-6 text-sm font-semibold group relative overflow-hidden">
         <span className="relative z-10 flex items-center">
           {cta}
           <svg
@@ -109,7 +99,7 @@ const Products = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* ================= HEADER ================= */}
-        <div ref={headerAnimation.ref} className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
           <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-full apple-glass text-xs sm:text-sm font-medium text-vedix-red mb-4 sm:mb-5 md:mb-6">
             <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-vedix-red rounded-full mr-2 sm:mr-3 animate-apple-pulse" />
             Our AI Products
@@ -126,10 +116,7 @@ const Products = () => {
         </div>
 
         {/* ================= PRODUCTS GRID ================= */}
-        <div
-          ref={productsAnimation.ref}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 overflow-hidden"
-        >
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 overflow-hidden">
           {products.map((product, index) => (
             <div
               key={product.id}
@@ -197,11 +184,7 @@ const Products = () => {
           <p className="text-sm sm:text-base md:text-lg text-vedix-gray/70 mb-4 sm:mb-5 md:mb-6 leading-[1.7] px-4 sm:px-0">
             Need a custom AI solution? Let's build something extraordinary.
           </p>
-          <button
-            onClick={clickSound}
-            onMouseEnter={hoverSound}
-            className="btn-outline-red h-11 px-6 text-sm font-semibold group"
-          >
+          <button className="btn-outline-red h-11 px-6 text-sm font-semibold group">
             <span className="flex items-center">
               Discuss Custom Solution
               <svg

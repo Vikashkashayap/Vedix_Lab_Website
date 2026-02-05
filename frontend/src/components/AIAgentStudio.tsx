@@ -234,7 +234,6 @@ const AIAgentStudio = () => {
                     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                   }
                 }}
-                onMouseEnter={() => hoverSound()}
                 className="btn-red h-11 px-6 text-sm font-semibold touch-manipulation group relative overflow-hidden shadow-apple-red-glow hover:shadow-apple-red-glow-hover transition-all duration-200"
               >
                 <span className="relative z-10 flex items-center">
@@ -256,7 +255,6 @@ const AIAgentStudio = () => {
                     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                   }
                 }}
-                onMouseEnter={() => hoverSound()}
                 className="btn-outline-red h-11 px-6 text-sm font-semibold touch-manipulation group shadow-apple-subtle hover:shadow-apple-medium transition-all duration-200"
               >
                 <span className="relative z-10 flex items-center">
